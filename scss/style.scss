@@ -1,0 +1,645 @@
+@import "sattings.scss";
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 10px;
+  width: 100%;
+}
+button {
+  cursor: pointer;
+}
+.slick-arrow {
+  position: absolute;
+  top: 50%;
+  color: #fff;
+  z-index: 9;
+  background: transparent;
+  border: none;
+  font-size: 40px;
+  transform: translate(-50%, -50%);
+}
+.PrevArrow {
+  left: 50px;
+}
+.NextArrow {
+  right: 20px;
+}
+.nav-toggle {
+  padding-right: 0.5em;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  right: 1rem;
+  top: 1rem;
+  z-index: 100;
+  outline: none;
+  display: none;
+}
+.section-service .services-item .info .title p {
+  margin-top: 20px;
+}
+.nav-open .hamburger {
+  transform: rotate(0.625turn);
+}
+.nav-open .hamburger::before {
+  transform: rotate(90deg) translateX(-6px);
+}
+.nav-open .hamburger::after {
+  opacity: 0;
+}
+.hamburger {
+  display: block;
+  position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  background-color: #009933;
+  width: 2em;
+  height: 3px;
+  border-radius: 1em;
+  transition: transform 250ms ease-in-out;
+}
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+.hamburger::before {
+  top: 6px;
+}
+.hamburger::after {
+  bottom: 6px;
+}
+
+.btn-green {
+  position: relative;
+  @include botton(230, 50, 5, $green);
+  padding: 0 40px 0 0;
+  @include font($white, 18, unset, 400, $transform: unset);
+  &::after {
+    content: "\2192";
+    position: absolute;
+    right: 30px;
+    font-size: 25px;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+.btn-green__2 {
+  position: relative;
+  @include botton(250, 40, 5, $green);
+  padding: 0 40px 0 0;
+  @include font($white, 18, unset, 400, $transform: unset);
+  &::after {
+    content: "\203A";
+    position: absolute;
+    right: 40px;
+    font-size: 25px;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+#footer {
+  &-bottom {
+    background-color: $green;
+  }
+}
+#header {
+  &-top {
+    background-color: $green;
+  }
+}
+.header {
+  &-top {
+    @include flex(space-between, center);
+    @include font($white, 14, 1.2, 400, $transform: unset);
+    padding: 13px 0;
+    &__info {
+      ul {
+        @include flex(space-between, center);
+        li {
+          margin: 0 20px;
+          &:nth-child(1) {
+            margin: 0 20px 0 0;
+          }
+          i {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+    &__soc {
+      @include flex(space-between, center);
+      a {
+        color: $white;
+        margin: 0 7.5px;
+      }
+    }
+  }
+
+  &-inner {
+    @include flex(space-between, center);
+    margin: 10px 0;
+  }
+  &-logo {
+    img {
+      max-width: 100%;
+      width: 80%;
+    }
+  }
+  &-menu {
+    ul {
+      @include flex(space-between, center);
+      li {
+        margin: 0 20px;
+        &:nth-child(1) {
+          margin: 0 20px 0 0;
+        }
+        a {
+          @include font($grey, 16, 1.2, 400, $transform: unset);
+          text-decoration: none;
+          transform: 0.3s;
+          &:hover {
+            color: $green;
+          }
+          &.active {
+            color: $green;
+          }
+        }
+      }
+    }
+  }
+}
+
+.slider {
+  &-img {
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    & img {
+      min-height: 100%;
+      min-width: 100%;
+      position: relative;
+      display: inline-block;
+      max-width: none;
+    }
+  }
+  &-info {
+    position: absolute;
+    z-index: 0;
+    top: 50%;
+    left: 10%;
+    width: 40%;
+    transform: translate(0, -50%);
+    h1 {
+      @include font($white, 36, unset, bold);
+    }
+    p {
+      @include font($white, 18, 22, 400);
+      margin: 40px 0 80px;
+      &:nth-child(1) {
+        margin-top: 40px;
+      }
+      &:nth-child(2) {
+        margin-bottom: 80px;
+      }
+    }
+  }
+}
+
+#section {
+  &-work {
+    background-color: #eeeeee;
+  }
+  &-service {
+    padding: 40px 0;
+  }
+  &-decision {
+    background-image: url(../images/decision.png);
+    position: relative;
+    padding: 70px 0;
+  }
+}
+.work {
+  @include flex(space-between, center);
+  padding: 30px 0;
+  p {
+    @include font($grey, 20, unset, bold);
+  }
+}
+
+.section {
+  &-title {
+    @include font($black, 40, unset, bold);
+    text-align: center;
+  }
+  &-about {
+    padding: 70px 0 40px;
+    @include flex(space-between, center);
+    .about {
+      &-info {
+        width: 50%;
+        h1 {
+          @include font($black, 30, unset, bold);
+          span {
+            color: $green;
+          }
+        }
+        p {
+          @include font($grey, 15, 18, 400);
+          padding: 12px 0;
+          &:nth-child(1) {
+            padding-top: 5px;
+          }
+        }
+        .btn-green {
+          margin-top: 30px;
+          width: 336px;
+        }
+      }
+      &-img {
+        width: 50%;
+
+        @include flex(center, center);
+      }
+    }
+  }
+  &-service {
+    .services {
+      margin: 70px 0;
+      &-bar {
+        border-bottom: 2px solid rgb(229, 231, 242);
+        @include flex(center, center);
+        li {
+          @include font($grey, 16, 22px, 400);
+          padding: 15px 0;
+          margin: 0 15px;
+          margin-top: 50px;
+
+          width: 120px;
+          text-align: center;
+          cursor: pointer;
+          transition: 0.3s;
+          &:nth-last-child(1) {
+            margin-left: 0;
+          }
+          &:nth-last-child(1) {
+            margin-right: 0;
+          }
+          &.active {
+            color: $green;
+            position: relative;
+            &::after {
+              content: "";
+              position: absolute;
+              height: 2px;
+              background-color: #00ac1a;
+              bottom: -2px;
+              width: 100%;
+              left: 0;
+            }
+          }
+        }
+      }
+      &-item {
+        border-radius: 15px;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0px 5px 15px 0px rgba(3, 3, 3, 0.35);
+        @include flex(space-between, center);
+        display: none;
+        transition: all 0.5s ease;
+
+        &.active {
+          display: flex;
+        }
+        .info {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: start;
+          height: 378px;
+          padding: 30px 50px;
+
+          width: 50%;
+          .title {
+            h3 {
+              @include font($green, 30, unset, bold);
+            }
+            p {
+              @include font($grey, 16, unset, 400);
+            }
+          }
+          .worker {
+            @include flex(space-between, center);
+            flex-wrap: wrap;
+            &-item {
+              width: 50%;
+              display: flex;
+              margin: 15px 0;
+
+              .icon {
+                margin-right: 25px;
+              }
+              .text {
+                h4 {
+                  @include font($green, 18, 25, bold);
+                }
+                p {
+                  @include font($grey, 14, 17, 400);
+                }
+              }
+            }
+          }
+          .btn-green {
+            width: 340px;
+          }
+        }
+        .img {
+          width: 40%;
+          height: 438px;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+  &-decision {
+    h2 {
+      @include font($black, 30, 42, bold);
+      width: 90%;
+      margin-bottom: 50px;
+    }
+    ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(6, fit-content);
+      li {
+        padding-left: 50px;
+        position: relative;
+        margin: 10px 0;
+        &:nth-child(4) {
+          grid-row: 2/4;
+          grid-column: 2/3;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0%;
+          background-image: url(../images/check.png);
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          width: 24px;
+          height: 24px;
+          left: 0;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  margin-top: 70px;
+}
+#footer {
+  background-color: #fafafa;
+}
+
+.footer {
+  @include flex(space-between, center);
+  padding: 15px 0;
+  &-menu {
+    p {
+      @include font($grey, 20, 27, bold);
+      a {
+        @include font($grey, 16, 18, bold);
+        margin: 0 5px;
+      }
+    }
+  }
+
+  &-bottom {
+    @include flex(space-between, center);
+    @include font($white, 14, 1.2, 400, $transform: unset);
+    padding: 13px 0;
+    &__info {
+      ul {
+        @include flex(space-between, center);
+        li {
+          margin: 0 20px;
+          &:nth-child(1) {
+            margin: 0 20px 0 0;
+          }
+          i {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    max-width: 990px;
+  }
+}
+
+// @media (min-width: 576px) { ... }
+
+// // Medium devices (tablets, 768px and up)
+// @media (min-width: 768px) { ... }
+
+// // Large devices (desktops, 992px and up)
+@media (max-width: 992px) {
+  .container {
+    max-width: 770px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 95%;
+  }
+  .header-top__info {
+    ul li:nth-child(1) {
+      display: none;
+    }
+  }
+  .slider-info {
+    left: 15%;
+    width: 70%;
+  }
+  .section-about {
+    flex-direction: column;
+    .about-info,
+    .about-img {
+      width: 90%;
+    }
+    .about-img {
+      margin-top: 30px;
+    }
+  }
+  .services-item {
+    flex-direction: column !important;
+    width: 90%;
+    margin: 0 auto;
+    .info {
+      width: unset !important;
+    }
+    .img {
+      width: 100% !important;
+      img {
+        border-bottom-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+      }
+    }
+  }
+  .footer-menu p {
+    font-size: 16px;
+
+    a {
+      font-size: 14px;
+    }
+  }
+  .footer-bottom {
+    line-height: 28px !important;
+    flex-direction: column !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .header-menu ul {
+    display: none;
+  }
+  .header-top__soc {
+    display: none;
+  }
+  .nav-toggle {
+    display: flex;
+  }
+
+  .header-menu ul.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    justify-content: center;
+    z-index: 99999;
+    background: #fff;
+    transition: all 0.5s ease-in;
+    top: 110px;
+    li {
+      margin: 0 !important;
+      padding: 15px;
+      border-bottom: 1px solid #767676;
+      width: 100%;
+      text-align: center;
+    }
+  }
+  .slick-arrow {
+    display: none !important;
+  }
+  .slider-info {
+    width: 90% !important;
+    text-align: center;
+    margin: 0 auto;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    h1 {
+      font-size: 26px;
+    }
+    p {
+      font-size: 14px !important;
+      line-height: 16px !important;
+      margin: 20px 0 40px !important;
+    }
+  }
+  .btn-green {
+    font-size: 16px;
+  }
+  .work {
+    flex-direction: column !important;
+    align-items: center;
+    text-align: center;
+    p {
+      margin-bottom: 20px;
+    }
+  }
+  .section-about .about-info h1 {
+    font-size: 16px;
+  }
+  .section-about .about-info p {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .section-about .about-info .btn-green {
+    width: 90%;
+    font-size: 14px;
+  }
+  .about-img img {
+    width: 50%;
+  }
+  .section-service .services-item .info {
+    width: 100% !important;
+    height: unset !important;
+    .title {
+      padding: 10px;
+      h3 {
+        font-size: 20px;
+      }
+      p {
+        font-size: 14px;
+        margin-top: 10px;
+      }
+    }
+    .worker {
+      flex-direction: column !important;
+      align-items: self-end;
+      padding: 0 20px;
+      &-item {
+        width: 100%;
+      }
+    }
+  }
+
+  .section-service .services-item .info .btn-green {
+    width: 90%;
+    margin: 0 auto;
+    font-size: 14px;
+
+    &::after {
+      font-size: 20px;
+    }
+  }
+
+  .section-decision h2 {
+    font-size: 16px;
+    line-height: 18px;
+  }
+  .section-decision ul {
+    display: block;
+  }
+  .footer {
+    justify-content: center;
+  }
+  .footer-bottom__info ul,
+  .footer-menu {
+    display: none;
+  }
+  .header-top {
+    font-size: 12px;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
